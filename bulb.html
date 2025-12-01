@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bulb On/Off</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin-top: 60px;
+    }
+    img {
+      width: 250px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #f1c40f;
+      color: black;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #ffdb4d;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Click the bulb or press the button to turn it ON or OFF</h2>
+
+  <!-- your bulb image -->
+  <img id="bulb" src="E:/Users/Super/Downloads/bulb-off.png" alt="Bulb" onclick="toggleBulb()">
+  
+  <!-- On/Off Button -->
+  <br>
+  <button id="toggleBtn" onclick="toggleBulb()">Turn On</button>
+
+  <script>
+    let isOn = false;
+
+    function toggleBulb() {
+      const bulb = document.getElementById("bulb");
+      const btn = document.getElementById("toggleBtn");
+
+      if (isOn) {
+        bulb.src = "E:/Users/Super/Downloads/bulb-off.png";  // bulb OFF
+        btn.textContent = "Turn On";
+        isOn = false;
+      } else {
+        bulb.src = "E:/Users/Super/Downloads/bulb-on.png";   // bulb ON
+        btn.textContent = "Turn Off";
+        isOn = true;
+      }
+    }
+  </script>
+
+</body>
+</html>
